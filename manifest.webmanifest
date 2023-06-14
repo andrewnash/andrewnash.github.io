@@ -2,7 +2,7 @@
   "name": "Andrew Nash Blog",
   "short_name": "Andrew Nash Blog",
   "lang": "en-US",
-  "description": "Powered by SvelteKit/Urara",
+  "description": "Developer Blog",
   "id": "https://urara-demo.netlify.app/",
   "start_url": "/",
   "scope": "/",
