@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head prefix="og: https://ogp.me/ns#">
+    <meta charset="utf-8" />
+    <meta name="generator" content="gh:importantimport/urara" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" crossorigin="use-credentials" href="/manifest.webmanifest" />
+    <link rel="alternate" type="application/feed+json" href="/feed.json" />
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <meta http-equiv="content-security-policy" content="style-src 'self' 'unsafe-inline' https://giscus.app">
+		<link href="../_app/immutable/assets/0.da0f1609.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.8b1ecbbd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.17f79c6b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.89e6bdd2.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.1d85ef92.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.695009a9.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.8fff3d22.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/posts.7eeb28a4.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/icon.d6d0d585.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.02ef8acd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/post_layout.62c31c75.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/footer.e30cee6b.js"><title>Subsea Resident Autonomous Underwater Vehicle | Andrew Nash Blog</title><!-- HEAD_svelte-1592q3p_START --><!-- HEAD_svelte-1592q3p_END --><!-- HEAD_svelte-1kxdj3d_START --><link rel="shortcut icon" href="https://urara-demo.netlify.app/favicon.png" sizes="48x48" type="image/png"><link rel="apple-touch-icon" href="https://urara-demo.netlify.app/assets/any@180.png" sizes="180x180" type="image/png"><link rel="icon" href="https://urara-demo.netlify.app/assets/any@192.png" sizes="192x192" type="image/png"><!-- HEAD_svelte-1kxdj3d_END --><!-- HEAD_svelte-1g590ms_START --><meta name="theme-color"><!-- HEAD_svelte-1g590ms_END --><!-- HEAD_svelte-abrfj_START --><meta name="author" content="Andrew Nash"><link rel="canonical" href="https://urara-demo.netlify.app/srauv">
+    
+    <meta name="keywords" content="Computer Vision, RL">
+    <!-- HEAD_svelte-abrfj_END --><!-- HEAD_svelte-1y1uq0g_START --><meta property="og:site_name" content="Andrew Nash Blog"><meta property="og:locale" content="en-US"><meta property="og:type" content="article">
+    <meta property="og:title" content="Subsea Resident Autonomous Underwater Vehicle">
+    
+    <meta property="og:image" content="https://urara-demo.netlify.app/srauv/team.jpg">
+      <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:tag" content="Computer Vision"><meta property="article:tag" content="RL">
+    <meta property="og:url" content="https://urara-demo.netlify.app/srauv">
+    <meta property="article:author" content="Andrew Nash">
+    <meta property="article:published_time" content="2020-05-02T00:00:00.000Z">
+    <meta property="article:modified_time" content="2023-06-14T03:31:28.125Z"><!-- HEAD_svelte-1y1uq0g_END -->
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage">
+    <div style="display: contents">
+
+
+
+
+
+
+
+
+
+
+<header id="header" class="fixed z-50 w-screen transition-all duration-500 ease-in-out border-b-2 border-transparent max-h-[4.125rem] false"><div class="navbar"><div class="navbar-start">
+
+<div class="dropdown lg:hidden"><label for="navbar-dropdown" tabindex="0" class="btn btn-square btn-ghost"><span class="i-heroicons-outline-menu-alt-1"></span></label>
+  <ul id="navbar-dropdown" tabindex="0" class="menu menu-compact dropdown-content bg-base-100 text-base-content shadow-lg rounded-box min-w-max max-w-52 p-2"><li><a href="/igvc">IGVC</a>
+        </li><li><a href="/srauv">SRAUV</a>
+        </li></ul></div>
+<div class="swap order-last hidden lg:inline-grid"><button class="swap-on btn btn-ghost text-base font-normal normal-case transition-all duration-200 hidden"></button>
+  <ul class="swap-off menu menu-horizontal p-0"><li><a class="!rounded-btn" href="/igvc">IGVC</a>
+        </li><li><a class="!rounded-btn" href="/srauv">SRAUV</a>
+        </li></ul></div>
+        <a href="/" class="btn btn-ghost normal-case text-lg">Andrew Nash Blog</a></div>
+      <div class="navbar-end">
+        <div id="change-theme" class="dropdown dropdown-end">
+          
+          <div tabindex="0" class="btn btn-square btn-ghost"><span class="i-heroicons-outline-color-swatch"></span></div>
+          
+          
+          <ul tabindex="0" class="flex flex-nowrap shadow-2xl menu dropdown-content bg-base-100 text-base-content rounded-box w-52 p-2 gap-2 overflow-y-auto max-h-[21.5rem]"><button data-theme="dracula" class="btn btn-ghost w-full hover:bg-primary group rounded-lg flex bg-base-100 p-2 transition-all"><p class="flex-1 text-left text-base-content group-hover:text-primary-content transition-color">🧛 Dark</p>
+                <div class="grid grid-cols-4 gap-0.5 m-auto"><div class="bg-primary w-1 h-4 rounded-btn"></div><div class="bg-secondary w-1 h-4 rounded-btn"></div><div class="bg-accent w-1 h-4 rounded-btn"></div><div class="bg-neutral w-1 h-4 rounded-btn"></div></div>
+              </button></ul></div></div></div></header>
+
+<button id="totop" aria-label="scroll to top" class="fixed grid group btn btn-circle btn-lg border-none backdrop-blur bottom-6 right-6 z-50 duration-500 ease-in-out btn-ghost bg-base-100/30 md:bg-base-200/30 translate-y-24"><div class="radial-progress text-accent transition-all duration-500 ease-in-out group-hover:text-accent-focus col-start-1 row-start-1" style="--size:4rem; --thickness: 0.25rem; --value:undefined;"></div>
+  <div class="border-4 border-base-content/10 group-hover:border-transparent col-start-1 row-start-1 rounded-full w-full h-full p-4 grid duration-500 ease-in-out"><span class="i-heroicons-solid-chevron-up !w-6 !h-6"></span></div></button>
+
+<div class="bg-base-100 md:bg-base-200 min-h-screen pt-16 md:pb-8 lg:pb-16">
+
+
+
+<div class="flex flex-col flex-nowrap justify-center xl:flex-row xl:flex-wrap"><div class="flex-1 w-full order-first ease-out transform mx-auto xl:mr-0 xl:ml-0"></div>
+  <div class="flex-1 w-full xl:order-last ease-out transform mx-auto xl:ml-0 xl:mr-0"></div>
+  <div class="flex-none w-full max-w-screen-md mx-auto xl:mx-0"><article itemscope itemtype="https://schema.org/BlogPosting" itemprop="blogPost" class="h-entry card bg-base-100 rounded-none md:rounded-box md:shadow-xl overflow-hidden z-10 md:mb-8 lg:mb-16">
+  
+  
+  <div class="card-body gap-0 "><div class="flex flex-col gap-2"><figure class="md:order-last rounded-box shadow-xl mb-4 flex-col gap-2 -mx-4 -mt-8 md:mt-0"><picture><source srcset="/_app/immutable/assets/team.37031e36.avif 736w" type="image/avif">
+    <img src="/srauv/team.jpg" alt="/srauv/team.jpg" class="u-featured" loading="lazy" decoding="async"></picture></figure>
+      <div class="flex font-semibold gap-1.5"><a rel="author" class="opacity-75 hover:opacity-100 hover:text-primary duration-500 ease-in-out p-author h-card" href="https://urara-demo.netlify.app">Andrew Nash</a>
+  <span class="opacity-50">/</span>
+  <a href="/srauv" class="u-url u-uid swap group/time"><time class="group-hover/time:opacity-0 font-semibold opacity-75 duration-500 ease-in-out mr-auto dt-published" datetime="2020-05-02T00:00:00.000Z" itemprop="datePublished">Saturday, May 2, 20</time>
+    <time class="opacity-0 group-hover/time:opacity-100 font-semibold text-primary duration-500 ease-in-out mr-auto dt-updated" datetime="2023-06-14T03:31:28.125Z" itemprop="dateModified">Wednesday, Jun 14, 23</time></a></div>
+      <h1 itemprop="name headline" class="card-title text-3xl mb-8 p-name">Subsea Resident Autonomous Underwater Vehicle</h1>
+      </div>
+    <main itemprop="articleBody" class="urara-prose prose e-content"><h1 id="navigating-the-depths-with-rl"><a href="#navigating-the-depths-with-rl">Navigating the Depths with RL</a></h1>
+<p>Hello folks! My name is Andrew Nash, and I’ve been heavily involved in developing a software system for an autonomous subsea vehicle, the SRAUV, as part of my engineering capstone project. In this blog post, I’ll detail the work I did on the Autopilot/AI perception, navigation, and control. Strap in for an exciting journey deep beneath the waves!</p>
+<p><code>youtube: https://www.youtube.com/watch?v=wzNI8wY0UT0&amp;ab_channel=AndrewNash</code></p>
+<h2 id="introduction"><a href="#introduction">Introduction</a></h2>
+<p>In my capstone project, my team and I have tackled a pervasive problem in offshore oil and gas operations - consistent and reliable subsea monitoring. To address this, we’ve designed a prototype Subsea Resident Autonomous Underwater Vehicle (SRAUV). Our innovative SRAUV operates indefinitely under the sea, utilizing a dock on the seafloor that facilitates wireless charging and communication. It embarks on scheduled or on-demand inspection missions, collects vital data, and then returns to the dock to transmit this information. Through this approach, we’re ushering in a new era of advanced offshore operations, with potential upgrades such as real-time anomaly detection that promises enhanced efficiency and safety.</p>
+<p><img src="./srauv_ocean.png" alt="srauv" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h2 id="vehicle"><a href="#vehicle">Vehicle</a></h2>
+<p>My exceptional teammates ensured the SRAUV’s mechanical design adhered to principles of hydrodynamics, stability, and compactness, resulting in a sleek, efficient design. Fitting within the original constraints of a 2-foot length and width, the vehicle’s overall mass is approximately 15 kg, as illustrated below. The team cleverly configured the thrusters to offer a versatile maneuverability, giving the SRAUV 5 degrees of freedom, though effectively using only 4 - excluding pitch and roll - for the project’s final demonstration.</p>
+<p><img src="./mech.png" alt="mech" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h2 id="software-overview"><a href="#software-overview">Software Overview</a></h2>
+<p>The SRAUV software is a culmination of collaborative effort, using Unity 3D game engine for fast prototyping, extensive machine learning support, and engaging visual feedback. The interface is an all-in-one GUI Simulator, allowing the user to control the vehicle, visualize thruster direction feedback, and simulate various environmental conditions. All software for the project is openly available on Github.</p>
+<h2 id="simulator"><a href="#simulator">Simulator</a></h2>
+<p>We developed a Unity-based simulator that accurately mimics the mechanics of the SRAUV. This simulator applies individual thrust vectors at each thruster’s respective angle, fine-tuning its underwater movement, often referred to as “driftyness”, to reflect the real-world feedback from experienced pilots. The simulation updates in response to these thrust commands, providing new sensor data which includes the SRAUV’s position and the relative locations of assets in the environment. This helped us efficiently and accurately test our autonomous flying solutions.</p>
+<p><img src="./unity_sim.png" alt="unity_sim" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h2 id="model-training"><a href="#model-training">Model Training</a></h2>
+<p>In addition to the main simulator, I created a lighter “ML Tank” for training the DRL algorithms. This environment include a significantly reduced polygon count, a necessary optimization since DRL algorithms are computationally expensive to simulate. Further speed enhancements were achieved by including multiple ML Tanks, allowing multiple agents to collect observations simultaneously, this can be seen below.</p>
+<p>Screenshot of 49 ML Tanks training simultaneously within the Unity environment. <img src="./49_tanks.gif" alt="tanks" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h2 id="autonomous-strategy"><a href="#autonomous-strategy">Autonomous Strategy</a></h2>
+<p>As the core designer of the Autopilot, I initially considered employing Q-learning for the SRAUV’s control system. This approach was favored due to its popularity and well-documented success. However, throughout the model selection process, I found Deep Reinforcement Learning (DRL) to be the most effective at driving in the simulator. I utilized Unity ML-Agents Toolkit for DRL training within the Unity simulator, leading to rapid experimentation with the SRAUV’s Flight Computer and Vision System.</p>
+<p><img src="./auto_pilot.png" alt="system" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<p>With DRL, I designed an end-to-end solution for our control system. This allowed observations to go into the model and thrust control to emerge, providing optimal control of the SRAUV through a variety of unpredictable scenarios.</p>
+<h2 id="model-development"><a href="#model-development">Model Development</a></h2>
+<p>For model training, I used a simplified subproblem - driving from a random X, Y, Z position to another random position as quickly as possible. I then tested various DRL solutions on these subproblems, progressively introducing complexity until the environment closely mirrored real life. This iterative approach allowed for significant improvement during model development.</p>
+<p><img src="./autnomous.gif" alt="autnomous_flying" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h3 id="model-selection"><a href="#model-selection">Model Selection</a></h3>
+<p>For the SRAUV control system, I considered both discrete and continuous action spaces. While a continuous action space implies real numbers for the DRL model output, a discrete one implies a fixed set of categories. I experimentally found discrete to be more effective during training. I benchmarked the Soft Actor-Critic (SAC) model against a Proximal Policy Optimization (PPO). SAC took a considerable time to train and often failed to reach the goal consistently. On the other hand, PPO found the optimal driving strategy faster and more effectively, which led to its selection for further development.</p>
+<h3 id="reward-structure"><a href="#reward-structure">Reward Structure</a></h3>
+<p>The reward structure found to best solve the easy environment was relatively straightforward, consisting of three different rewards. The first reward was assigned as +1 when the agent arrived within a predefined tolerance of its goal waypoint. The second reward was the negative inverse of maximum time steps -0.002, this small negative reward assigned every timestep encouraged the model to drive to the goal as fast as possible. Finally, the third reward sets the overall reward to -1 if the agent collides with anything, this also resets the run for increased training speed.</p>
+<p><img src="./tank_driving.gif" alt="tank_driving" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<p>In further iterations of the training environment, I found that the agent would sometimes overshoot its goal position and accidentally crash into a wall, to help mitigate this problem a stacking negative reward was assigned whenever the agent exceeded 0.3 m/s velocity in any axis of movement. This resulted in reduced crashing and taught the model to operate at a reduced speed when nearing its goal position.</p>
+<h3 id="curriculum-learning"><a href="#curriculum-learning">Curriculum Learning</a></h3>
+<p>Since the PPO algorithm struggled to converge when tolerances of less than 40cm were used in training, I utilized curriculum learning to overcome this challenge. This technique allowed me to progressively decrease the tolerance required to reach the goal waypoint during training, significantly enhancing the model’s performance.</p>
+<p><img src="./reward.PNG" alt="srauv_in_tank" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h3 id="localization"><a href="#localization">Localization</a></h3>
+<p>After our initial approach for localization, which relied on a combination of a pressure sensor, time-of-flight (TOF) sensors, and an inertial-measurement-unit (IMU), failed to meet expectations, my team and I were forced to quickly pivot. Due to issues ranging from faulty TOF sensors, an unsteady IMU, and a malfunctioning depth sensor, we had to reimagine our solution, leading us to the exploration of a computer vision-based approach. Utilizing AprilTags, similar to simple QR codes, we established a localization system that successfully tracked the position and rotation of the SRAUV relative to the tank. We installed a grid of these AprilTags on the tank floor, ensuring the bottom camera of the SRAUV was able to constantly locate a tag, significantly improving our vehicle’s spatial awareness. Impressively, this solution not only worked exceedingly well during testing, achieving an accuracy of about +-5 cm in position and +-5 degrees in heading, but it was also considerably more cost-effective than our initial sensor plan.</p>
+<p><img src="./srauv_in_tank.png" alt="srauv_in_tank" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<p>The AprilTags detection in the ML Tank was another area I optimized. Running the vision recognition on all 49 tanks in a single environment would have been computationally prohibitive. To address this, I added a camera with matching intrinsic parameters and position to the SRAUV’s bottom pi cam in the simulator. This allowed me to check if the AprilTag was in the camera’s frame during each timestep, providing the agent with the most recently known position &amp; velocity estimate, simulating the noisy conditions it would face in the real world.</p>
+<p><img src="./april_tank.gif" alt="april_tags" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h2 id="real-world-testing"><a href="#real-world-testing">Real World Testing</a></h2>
+<p>Below you can see some videos of real world testing the SRAUV in a tank at Memorial University.</p>
+<p><img src="./testing1.gif" alt="testing1" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<p><img src="./testing2.gif" alt="testing2" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<h2 id="conclusion"><a href="#conclusion">Conclusion</a></h2>
+<p>Wrapping up, I am incredibly proud of the progress and achievements made by my team and myself throughout our capstone project. We successfully designed, implemented, and tested a neural network-based autopilot for our Subsea Resident AUV (SRAUV) prototype. This enabled the SRAUV to perform autonomous missions, including navigating a prescribed route and redocking, a significant milestone for us. Even though we faced setbacks, such as hardware failures limiting the testing of an improved autopilot model, these challenges only fueled our drive to innovate. Our commitment paid off, winning us first place in all capstone award categories. We believe our work has set a strong foundation for future developments in autonomous subsea navigation.</p>
+<p><img src="./srauv.png" alt="srauv" class="rounded-lg my-2" loading="lazy" decoding="async"></p>
+<p><code>youtube: https://www.youtube.com/watch?v=v3Z9sVuU5DQ&amp;ab_channel=AndrewNash</code>\
+<code>youtube: https://www.youtube.com/watch?v=UXqgjFvW4HE&amp;t=9s&amp;ab_channel=AndrewNash</code></p></main>
+    <div class="divider mt-4 mb-0"></div>
+      <div><a href="/?tags=Computer Vision" class="btn btn-sm btn-ghost normal-case mt-2 mr-2 p-category">#Computer Vision
+          </a><a href="/?tags=RL" class="btn btn-sm btn-ghost normal-case mt-2 mr-2 p-category">#RL
+          </a></div></div>
+  
+    </article>
+    <footer id="footer" class="footer footer-center bg-base-300 text-base-content shadow-inner p-8 md:rounded-box sticky bottom-0 z-0 md:static "><div class="prose"><p><a href="/atom.xml" rel="noopener noreferrer external" target="_blank">Feed</a>
+          <span class="mr-1">·</span><a href="/sitemap.xml" rel="noopener noreferrer external" target="_blank">Sitemap</a>
+          
+        <br>
+      Copyright © 2023
+      Andrew Nash
+      <br>
+      Powered by
+      <a rel="noopener noreferrer external" target="_blank" class="tooltip tooltip-secondary hover:text-secondary" data-tip="🌸 [δ] - Based on MDsveX & SvelteKit 🌸" href="https://github.com/importantimport/urara">Urara
+      </a>
+      </p></div></footer></div></div></div>
+
+
+			<script type="application/json" data-sveltekit-fetched data-url="/posts.json">{"status":200,"statusText":"","headers":{},"body":"[{\"title\":\"Intelligent Ground Vehicle Competition\",\"image\":\"/igvc/team.jpg\",\"alt\":\"IGVC\",\"created\":\"2023-06-11T00:00:00.000Z\",\"tags\":[\"Computer Vision\",\"Transformer\"],\"updated\":\"2023-06-14T03:31:27.877Z\",\"images\":[],\"slug\":\"/igvc/+page.svelte.md\",\"path\":\"/igvc\",\"toc\":[{\"depth\":1,\"title\":\"A Deep Dive into My Autonomous Vehicle Software Design Journey\",\"slug\":\"a-deep-dive-into-my-autonomous-vehicle-software-design-journey\"},{\"depth\":2,\"title\":\"IGVC Auto-Nav Challenge\",\"slug\":\"igvc-auto-nav-challenge\"},{\"depth\":2,\"title\":\"Vehicle\",\"slug\":\"vehicle\"},{\"depth\":2,\"title\":\"Software Overview\",\"slug\":\"software-overview\"},{\"depth\":3,\"title\":\"Vision-based Obstacle Detection and Avoidance\",\"slug\":\"vision-based-obstacle-detection-and-avoidance\"},{\"depth\":4,\"title\":\"Obstacle Avoidance\",\"slug\":\"obstacle-avoidance\"},{\"depth\":3,\"title\":\"Mapping & Path Planning\",\"slug\":\"mapping--path-planning\"},{\"depth\":3,\"title\":\"Localization\",\"slug\":\"localization\"},{\"depth\":2,\"title\":\"Simulation\",\"slug\":\"simulation\"},{\"depth\":3,\"title\":\"Model Training from Simulator Data\",\"slug\":\"model-training-from-simulator-data\"},{\"depth\":2,\"title\":\"Compute Hardware\",\"slug\":\"compute-hardware\"},{\"depth\":2,\"title\":\"GPT for Fundraising\",\"slug\":\"gpt-for-fundraising\"},{\"depth\":2,\"title\":\"Conclusion\",\"slug\":\"conclusion\"},{\"depth\":4,\"title\":\"References\",\"slug\":\"references\"}],\"type\":\"article\",\"html\":\"\"},{\"title\":\"Subsea Resident Autonomous Underwater Vehicle\",\"image\":\"/srauv/team.jpg\",\"alt\":\"SRAUV\",\"created\":\"2020-05-02T00:00:00.000Z\",\"tags\":[\"Computer Vision\",\"RL\"],\"updated\":\"2023-06-14T03:31:28.125Z\",\"images\":[],\"slug\":\"/srauv/+page.svelte.md\",\"path\":\"/srauv\",\"toc\":[{\"depth\":1,\"title\":\"Navigating the Depths with RL\",\"slug\":\"navigating-the-depths-with-rl\"},{\"depth\":2,\"title\":\"Introduction\",\"slug\":\"introduction\"},{\"depth\":2,\"title\":\"Vehicle\",\"slug\":\"vehicle\"},{\"depth\":2,\"title\":\"Software Overview\",\"slug\":\"software-overview\"},{\"depth\":2,\"title\":\"Simulator\",\"slug\":\"simulator\"},{\"depth\":2,\"title\":\"Model Training\",\"slug\":\"model-training\"},{\"depth\":2,\"title\":\"Autonomous Strategy\",\"slug\":\"autonomous-strategy\"},{\"depth\":2,\"title\":\"Model Development\",\"slug\":\"model-development\"},{\"depth\":3,\"title\":\"Model Selection\",\"slug\":\"model-selection\"},{\"depth\":3,\"title\":\"Reward Structure\",\"slug\":\"reward-structure\"},{\"depth\":3,\"title\":\"Curriculum Learning\",\"slug\":\"curriculum-learning\"},{\"depth\":3,\"title\":\"Localization\",\"slug\":\"localization\"},{\"depth\":2,\"title\":\"Real World Testing\",\"slug\":\"real-world-testing\"},{\"depth\":2,\"title\":\"Conclusion\",\"slug\":\"conclusion\"}],\"type\":\"article\",\"html\":\"\"}]"}</script>
+			<script>
+				{
+					__sveltekit_162w5vi = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.8b1ecbbd.js"),
+						import("../_app/immutable/entry/app.695009a9.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>
