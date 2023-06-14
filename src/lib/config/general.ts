@@ -60,8 +60,8 @@ export const header: HeaderConfig = {
       link: '/igvc'
     },
     {
-      text: 'Elements',
-      link: '/hello-world/elements'
+      text: 'SRAUV',
+      link: '/srauv'
     }
   ]
 }
