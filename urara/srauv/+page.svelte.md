@@ -12,7 +12,9 @@ tags:
 
 Hello folks! My name is Andrew Nash, and I've been heavily involved in developing a software system for an autonomous subsea vehicle, the SRAUV, as part of my engineering capstone project. In this blog post, I'll detail the work I did on the Autopilot/AI perception, navigation, and control. Strap in for an exciting journey deep beneath the waves!
 
-`youtube: https://www.youtube.com/watch?v=wzNI8wY0UT0&ab_channel=AndrewNash`
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wzNI8wY0UT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
 
 ## Introduction
 
@@ -98,5 +100,8 @@ Wrapping up, I am incredibly proud of the progress and achievements made by my t
 
 ![srauv](./srauv.png)
 
-`youtube: https://www.youtube.com/watch?v=v3Z9sVuU5DQ&ab_channel=AndrewNash`\
-`youtube: https://www.youtube.com/watch?v=UXqgjFvW4HE&t=9s&ab_channel=AndrewNash`
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v3Z9sVuU5DQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UXqgjFvW4HE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
