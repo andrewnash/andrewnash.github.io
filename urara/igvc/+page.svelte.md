@@ -34,7 +34,7 @@ I designed Paradigm's autonomous vehicle software strategy with the singular aim
 
 Central to this was the integration of our custom AI and localization pipelines with the ROS2 Nav2 system, a feat that I am particularly proud of. This integration allowed our software to adjust the vehicle's path in real-time based on the identified obstacles and their estimated locations. The robustness and precision of our software were key in navigating the Auto-Nav Challenge effectively.
 
-### Vision-based Obstacle Detection and Avoidance
+### Vision-based Obstacle Detection
 
 One of my significant contributions was incorporating advanced computer vision algorithms into our design. Our vehicle was equipped with six high-resolution cameras, capturing 360-degree visuals at 60 frames per second. Two separate instances of Cross-View Transformer (CVT) [1] processed the real-time data from these cameras. Each CVT instance generated a 256x256 matrix that represented the model's confidence levels in the presence of an obstacle in an approximately one square inch area. I integrated these outputs into a ROS costmap for efficient path planning.
 
@@ -42,7 +42,7 @@ One of my significant contributions was incorporating advanced computer vision a
 
 CVTs use a cross-view, cross-attention mechanism to convert individual camera features into a shared bird's eye view (BEV) representation. I fine-tuned this model to accurately detect obstacles and predict feasible navigation areas.
 
-#### Obstacle Avoidance
+### Dual BEV Mapping
 
 The two CVTs worked together to form a detailed bird's-eye-view of the environment. While one CVT instance detected obstacles, the other, dubbed the "driveable" model, mapped feasible navigation areas around the robot. My focus on collaboration and synchronization between these two models played a crucial role in our success in the Auto-Nav Challenge.
 
