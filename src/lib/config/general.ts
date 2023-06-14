@@ -62,6 +62,10 @@ export const header: HeaderConfig = {
     {
       text: 'SRAUV',
       link: '/srauv'
+    },
+    {
+      text: 'HEV',
+      link: '/hev'
     }
   ]
 }
