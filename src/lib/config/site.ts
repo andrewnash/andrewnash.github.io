@@ -4,14 +4,14 @@ export const site: SiteConfig = {
   protocol: import.meta.env.URARA_SITE_PROTOCOL ?? import.meta.env.DEV ? 'http://' : 'https://',
   domain: import.meta.env.URARA_SITE_DOMAIN ?? 'urara-demo.netlify.app',
   title: 'Andrew Nash Blog',
-  subtitle: 'Msc ',
+  subtitle: 'MSc',
   lang: 'en-US',
-  description: 'Powered by SvelteKit/Urara',
+  description: 'Developer Blog',
   author: {
-    avatar: '/assets/maskable@512.png',
+    avatar: '/assets/icon.png',
     name: 'Andrew Nash',
-    status: '🌸',
-    bio: 'MSc Computer Science Graduate'
+    status: '🐢',
+    bio: 'M.Sc Computer Science Graduate'
   },
   themeColor: '#3D4451'
 }
