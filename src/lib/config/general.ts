@@ -9,46 +9,46 @@ export const theme: ThemeConfig = [
     name: 'dracula',
     text: '🧛 Dark'
   },
-  // {
-  //   name: 'valentine',
-  //   text: '🌸 Valentine'
-  // },
-  // {
-  //   name: 'aqua',
-  //   text: '💦 Aqua'
-  // },
-  // {
-  //   name: 'synthwave',
-  //   text: '🌃 Synthwave'
-  // },
-  // {
-  //   name: 'night',
-  //   text: '🌃 Night'
-  // },
-  // {
-  //   name: 'lofi',
-  //   text: '🎶 Lo-Fi'
-  // },
-  // {
-  //   name: 'lemonade',
-  //   text: '🍋 Lemonade'
-  // },
-  // {
-  //   name: 'cupcake',
-  //   text: '🧁 Cupcake'
-  // },
-  // {
-  //   name: 'garden',
-  //   text: '🏡 Garden'
-  // },
-  // {
-  //   name: 'retro',
-  //   text: '🌇 Retro'
-  // },
-  // {
-  //   name: 'black',
-  //   text: '🖤 Black'
-  // }
+  {
+    name: 'valentine',
+    text: '🌸 Valentine'
+  },
+  {
+    name: 'aqua',
+    text: '💦 Aqua'
+  },
+  {
+    name: 'synthwave',
+    text: '🌃 Synthwave'
+  },
+  {
+    name: 'night',
+    text: '🌃 Night'
+  },
+  {
+    name: 'lofi',
+    text: '🎶 Lo-Fi'
+  },
+  {
+    name: 'lemonade',
+    text: '🍋 Lemonade'
+  },
+  {
+    name: 'cupcake',
+    text: '🧁 Cupcake'
+  },
+  {
+    name: 'garden',
+    text: '🏡 Garden'
+  },
+  {
+    name: 'retro',
+    text: '🌇 Retro'
+  },
+  {
+    name: 'black',
+    text: '🖤 Black'
+  }
 ]
 
 export const head: HeadConfig = {}
