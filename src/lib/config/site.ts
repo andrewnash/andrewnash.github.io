@@ -10,8 +10,8 @@ export const site: SiteConfig = {
   author: {
     avatar: '/assets/icon.png',
     name: 'Andrew Nash',
-    status: '🐢',
-    bio: 'M.Sc Computer Science Graduate'
+    status: '🚀',
+    bio: 'M.Sc Computer Science Candidate'
   },
   themeColor: '#3D4451'
 }
