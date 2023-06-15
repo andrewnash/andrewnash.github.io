@@ -10,6 +10,14 @@ export const theme: ThemeConfig = [
     text: '🧛 Dark'
   },
   {
+    name: 'dracula',
+    text: '🧛 Dark'
+  },
+  {
+    name: 'night',
+    text: '🌃 Night'
+  },
+  {
     name: 'valentine',
     text: '🌸 Valentine'
   },
@@ -20,10 +28,6 @@ export const theme: ThemeConfig = [
   {
     name: 'synthwave',
     text: '🌃 Synthwave'
-  },
-  {
-    name: 'night',
-    text: '🌃 Night'
   },
   {
     name: 'lofi',
