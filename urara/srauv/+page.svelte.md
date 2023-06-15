@@ -101,7 +101,12 @@ Wrapping up, I am incredibly proud of the progress and achievements made by my t
 ![srauv](./srauv.png)
 
 <center>
+
+Capstone Trailer (Awarded best video)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v3Z9sVuU5DQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+IEEE Night Presentation (Awarded best Presentation)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UXqgjFvW4HE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
