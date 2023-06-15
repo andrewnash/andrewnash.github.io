@@ -84,6 +84,10 @@ HEV-CVT validation IoU results per coordinate frame in each environment (higher 
 
 The second experiment evaluates the efficiency of policies learned by RL agents trained on HEV views compared to those trained on BEV views.
 
+| Push Block Environment | Dungeon Escape Environment |
+| :--------------------: | :------------------------: |
+| ![pb](./pushblock.gif) |  ![de](dungeonescape.gif)  |
+
 Table 2: MA-POCA mean episode length per coordinate frame in each environment (lower is better)
 
 | Environment              | World-Centric | Ego-Centric | Ego-Forward |
