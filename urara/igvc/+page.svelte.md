@@ -8,7 +8,7 @@ tags:
   - 'Transformer'
   - 'ROS'
   - 'Unreal Engine'
-  - 'Pytorch'
+  - 'PyTorch'
 ---
 
 # A Deep Dive into My Autonomous Vehicle Software Design Journey
