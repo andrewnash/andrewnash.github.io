@@ -6,6 +6,9 @@ created: 2023-06-11
 tags:
   - 'Computer Vision'
   - 'Transformer'
+  - 'ROS'
+  - 'Unreal Engine'
+  - 'Pytorch'
 ---
 
 # A Deep Dive into My Autonomous Vehicle Software Design Journey

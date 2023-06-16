@@ -5,7 +5,11 @@ alt: 'HEV'
 created: 2023-04-20
 tags:
   - 'Computer Vision'
+  - 'Transformer'
   - 'RL'
+  - 'Unity'
+  - 'PyTorch'
+  - 'C#'
 ---
 
 # Herd's Eye View: Improving Game AI Agent Learning with Collaborative Perception

@@ -6,11 +6,14 @@ created: 2020-05-02
 tags:
   - 'Computer Vision'
   - 'RL'
+  - 'Unity'
+  - 'TensorFlow'
+  - 'C#'
 ---
 
 # Navigating the Depths with RL
 
-Hello folks! My name is Andrew Nash, and I've been heavily involved in developing a software system for an autonomous subsea vehicle, the SRAUV, as part of my engineering capstone project. In this blog post, I'll detail the work I did on the Autopilot/AI perception, navigation, and control. Strap in for an exciting journey deep beneath the waves!
+Hello folks! My name is Andrew Nash, and I've been heavily involved in developing a software system for an Autonomous Subsea Vehicle, the SRAUV, as part of my engineering capstone project. In this blog post, I'll detail the work I did on the Autopilot/AI perception, navigation, and control. Strap in for an exciting journey deep beneath the waves!
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wzNI8wY0UT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
