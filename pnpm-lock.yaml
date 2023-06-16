@@ -1,7 +1,16 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 overrides:
   vite>rollup: ^3.10.0
+
+dependencies:
+  '@beyonk/svelte-google-analytics':
+    specifier: ^2.6.4
+    version: 2.6.4
 
 devDependencies:
   '@iconify-json/heroicons-outline':
@@ -1407,6 +1416,16 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
     dev: true
+
+  /@beyonk/async-script-loader@2.3.0:
+    resolution: {integrity: sha512-/vbDM5j8OHmtnWLx87sef0T/jGWVvZV6ILm3QFLpfRwSg0KmhQoAZnOT4XSaUL/EjOC9eMzgX5qtS2jztKzY2A==}
+    dev: false
+
+  /@beyonk/svelte-google-analytics@2.6.4:
+    resolution: {integrity: sha512-m2P1fs36qObCLtIZ9edLC62RHLrGVknaKuE4uEBQk5+Jfy1apa7DOIT0Jq1PvScyrndV62FvyjUUrWwrXjYbmw==}
+    dependencies:
+      '@beyonk/async-script-loader': 2.3.0
+    dev: false
 
   /@esbuild/android-arm64@0.17.19:
     resolution: {integrity: sha512-KBMWvEZooR7+kzY0BtbTQn0OAYY7CsiydT63pVEaPtVYF0hXbUaOyZog37DKxK7NF3XacBJOpYT4adIJh+avxA==}

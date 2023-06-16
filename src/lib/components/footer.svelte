@@ -5,6 +5,7 @@
   export { className as class }
   export let sticky: boolean = false
   export let rounded: boolean = false
+  import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
 </script>
 
 <footer
@@ -43,4 +44,5 @@
       {/if}
     </p>
   </div>
+  <GoogleAnalytics properties={['G-FZTZSJTXKR']} />
 </footer>

@@ -81,5 +81,8 @@
     "overrides": {
       "vite>rollup": "^3.10.0"
     }
+  },
+  "dependencies": {
+    "@beyonk/svelte-google-analytics": "^2.6.4"
   }
 }
