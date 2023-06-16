@@ -3,7 +3,7 @@
   "short_name": "Andrew Nash Blog",
   "lang": "en-US",
   "description": "Developer Blog",
-  "id": "https://urara-demo.netlify.app/",
+  "id": "https://andrewnash.github.io/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -12,25 +12,25 @@
   "theme_color": "#3D4451",
   "icons": [
     {
-      "src": "https://urara-demo.netlify.app/assets/any@192.png",
+      "src": "https://andrewnash.github.io/assets/any@192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://urara-demo.netlify.app/assets/any@512.png",
+      "src": "https://andrewnash.github.io/assets/any@512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://urara-demo.netlify.app/assets/maskable@192.png",
+      "src": "https://andrewnash.github.io/assets/maskable@192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "https://urara-demo.netlify.app/assets/maskable@512.png",
+      "src": "https://andrewnash.github.io/assets/maskable@512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

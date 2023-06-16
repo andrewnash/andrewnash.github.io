@@ -7,22 +7,22 @@
     xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
     xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">
     <url>
-      <loc>https://urara-demo.netlify.app</loc>
+      <loc>https://andrewnash.github.io</loc>
     </url>
     
         <url>
-            <loc>https://urara-demo.netlify.app/igvc</loc>
-            <lastmod>2023-06-16T14:28:50.474Z</lastmod>
+            <loc>https://andrewnash.github.io/igvc</loc>
+            <lastmod>2023-06-16T14:41:12.114Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://urara-demo.netlify.app/hev</loc>
-            <lastmod>2023-06-16T14:28:50.418Z</lastmod>
+            <loc>https://andrewnash.github.io/hev</loc>
+            <lastmod>2023-06-16T14:41:12.054Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
-            <loc>https://urara-demo.netlify.app/srauv</loc>
-            <lastmod>2023-06-16T14:28:50.738Z</lastmod>
+            <loc>https://andrewnash.github.io/srauv</loc>
+            <lastmod>2023-06-16T14:41:12.358Z</lastmod>
             <priority>0.5</priority>
         </url>
   </urlset>
