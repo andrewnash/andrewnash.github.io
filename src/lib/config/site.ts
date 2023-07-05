@@ -11,7 +11,7 @@ export const site: SiteConfig = {
     avatar: '/assets/icon.png',
     name: 'Andrew Nash',
     status: '🚀',
-    bio: 'M.Sc Computer Science Candidate'
+    bio: 'M.Sc Computer Science Candidate\nanash@mun.ca'
   },
   themeColor: '#3D4451'
 }
