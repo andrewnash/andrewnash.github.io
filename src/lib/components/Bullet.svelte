@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Bullet } from '$lib/resume'
+  import type { Bullet } from '#lib/resume.ts'
 
   let { bullet, open = false, dim = false }: { bullet: Bullet; open?: boolean; dim?: boolean } = $props()
 

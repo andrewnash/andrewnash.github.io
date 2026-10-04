@@ -1,10 +1,10 @@
 <script lang="ts">
   import { goto } from '$app/navigation'
   import { page } from '$app/state'
-  import { palette } from '$lib/palette.svelte'
-  import { posts } from '$lib/posts'
-  import { profile } from '$lib/resume'
-  import { theme, toggleTheme } from '$lib/theme.svelte'
+  import { palette } from '#lib/palette.svelte.ts'
+  import { posts } from '#lib/posts.ts'
+  import { profile } from '#lib/resume.ts'
+  import { theme, toggleTheme } from '#lib/theme.svelte.ts'
 
   interface Command {
     label: string

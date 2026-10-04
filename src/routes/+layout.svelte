@@ -1,10 +1,10 @@
 <script lang="ts">
   import '../app.css'
   import { onMount, type Snippet } from 'svelte'
-  import Nav from '$lib/components/Nav.svelte'
-  import CommandPalette from '$lib/components/CommandPalette.svelte'
-  import { initTheme } from '$lib/theme.svelte'
-  import { profile } from '$lib/resume'
+  import Nav from '#lib/components/Nav.svelte'
+  import CommandPalette from '#lib/components/CommandPalette.svelte'
+  import { initTheme } from '#lib/theme.svelte.ts'
+  import { profile } from '#lib/resume.ts'
 
   let { children }: { children: Snippet } = $props()
 

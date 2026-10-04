@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Bullet from '$lib/components/Bullet.svelte'
-  import { posts } from '$lib/posts'
-  import { education, internships, profile, projects, publications, roles, skills, stats, type Skill } from '$lib/resume'
+  import Bullet from '#lib/components/Bullet.svelte'
+  import { posts } from '#lib/posts.ts'
+  import { education, internships, profile, projects, publications, roles, skills, stats, type Skill } from '#lib/resume.ts'
 
   let skill = $state<Skill | null>(null)
   let expandAll = $state(false)

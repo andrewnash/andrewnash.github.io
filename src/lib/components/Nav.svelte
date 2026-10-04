@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { profile } from '$lib/resume'
-  import { palette } from '$lib/palette.svelte'
-  import { theme, toggleTheme } from '$lib/theme.svelte'
+  import { profile } from '#lib/resume.ts'
+  import { palette } from '#lib/palette.svelte.ts'
+  import { theme, toggleTheme } from '#lib/theme.svelte.ts'
 
   const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform)
 </script>

@@ -1,6 +1,8 @@
 # andrewnash.github.io
 
-Resume-first personal site for Andrew Nash. SvelteKit 2 + mdsvex, prerendered to static HTML and served by GitHub Pages.
+Resume-first personal site for Andrew Nash. SvelteKit 3 + Svelte 5 + mdsvex on Vite 8, prerendered to static HTML and served by GitHub Pages. Needs Node 22.17+ (CI uses Node 24, see `.nvmrc`).
+
+All config, including SvelteKit and mdsvex, lives in `vite.config.ts`. Import shared code with `#lib/...` (set up in `package.json` `imports`).
 
 ## Develop
 
