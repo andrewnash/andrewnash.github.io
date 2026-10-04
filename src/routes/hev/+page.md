@@ -2,6 +2,9 @@
 title: My Research - Herds Eye View
 image: '/hev/envs.PNG'
 alt: 'HEV'
+cover: '/hev/cover.jpg'
+coverAlt: "Herd's Eye View architecture diagram: multi-robot cameras into cross-attention, a world-centric map and a control policy"
+summary: "My MSc research (AIIDE-2023): a shared, world-centric view built from many agents' cameras that helps RL agents learn in multi-agent games."
 created: 2023-04-20
 tags:
   - 'Computer Vision'

@@ -2,6 +2,9 @@
 title: Subsea Resident Autonomous Underwater Vehicle
 image: '/srauv/team.jpg'
 alt: 'SRAUV'
+cover: '/srauv/cover.jpg'
+coverAlt: 'The SR AUV at the edge of its test tank'
+summary: 'My engineering capstone: autopilot perception, navigation and control for a subsea resident AUV, trained in a Unity simulator with reinforcement learning.'
 created: 2020-05-02
 tags:
   - 'Computer Vision'

@@ -155,7 +155,10 @@
 </section>
 
 <section id="writing" class="no-print" aria-labelledby="h-wri">
-  <h2 id="h-wri" class="label">Writing</h2>
+  <div class="sec-head">
+    <h2 id="h-wri" class="label">Writing</h2>
+    <a class="text-btn" href="/writing/">all writing →</a>
+  </div>
   {#each posts as p}
     <a class="row post" href="/{p.slug}/">
       <span class="when">{p.created}</span>
@@ -245,6 +248,7 @@
     align-items: baseline;
   }
   .text-btn {
+    text-decoration: none;
     background: none;
     border: 0;
     padding: 0;

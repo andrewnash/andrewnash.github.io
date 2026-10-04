@@ -2,6 +2,9 @@
 title: Intelligent Ground Vehicle Competition
 image: '/igvc/team.jpg'
 alt: 'IGVC'
+cover: '/igvc/cover.jpg'
+coverAlt: 'Paradigm IGVC robot on the bench in the workshop'
+summary: "Leading the software for Paradigm's entry in the 30th IGVC: vision-based obstacle detection, mapping and ROS 2 Nav2 for an autonomous course with lane lines and obstacles."
 created: 2023-06-11
 tags:
   - 'Computer Vision'

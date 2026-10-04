@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/state'
   import { profile } from '#lib/resume.ts'
   import { palette } from '#lib/palette.svelte.ts'
   import { theme, toggleTheme } from '#lib/theme.svelte.ts'
@@ -10,7 +11,7 @@
   <a class="home" href="/">andrew nash</a>
   <span class="links">
     <a href="/#experience">work</a>
-    <a href="/#writing">writing</a>
+    <a href="/writing/" aria-current={page.url.pathname.startsWith('/writing') ? 'page' : undefined}>writing</a>
     <a href={profile.resume}>resume.pdf</a>
     <button type="button" class="key" onclick={() => (palette.open = true)} aria-label="Open command menu">
       {isMac ? '⌘' : 'Ctrl'} K

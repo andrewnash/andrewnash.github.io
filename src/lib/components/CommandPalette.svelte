@@ -33,7 +33,7 @@
     { label: 'Projects', group: 'Go to', run: () => section('projects') },
     { label: 'Publications', group: 'Go to', run: () => section('publications') },
     { label: 'Education', group: 'Go to', run: () => section('education') },
-    { label: 'Writing', group: 'Go to', run: () => section('writing') },
+    { label: 'Writing', group: 'Go to', hint: 'all posts', run: () => goto('/writing/') },
     ...posts.map(p => ({ label: p.title, group: 'Read', hint: p.created.slice(0, 4), keywords: `${p.slug} ${p.tags.join(' ')}`, run: () => goto(`/${p.slug}/`) })),
     { label: 'Resume (PDF)', group: 'Links', run: () => (location.href = profile.resume) },
     { label: 'GitHub', group: 'Links', hint: 'github.com/andrewnash', run: external(profile.github) },

@@ -3,6 +3,9 @@ export interface PostMeta {
   title: string
   created: string
   image?: string
+  cover?: string
+  coverAlt?: string
+  summary?: string
   tags: string[]
 }
 
@@ -17,3 +20,8 @@ export const posts: PostMeta[] = Object.entries(modules)
     tags: mod.metadata.tags ?? []
   }))
   .sort((a, b) => b.created.localeCompare(a.created))
+
+// Every tag used by a post, most used first, then alphabetical.
+export const postTags: string[] = [...new Set(posts.flatMap(p => p.tags))].sort(
+  (a, b) => posts.filter(p => p.tags.includes(b)).length - posts.filter(p => p.tags.includes(a)).length || a.localeCompare(b)
+)

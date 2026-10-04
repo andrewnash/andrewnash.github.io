@@ -6,9 +6,21 @@
     title,
     created,
     image,
+    cover,
+    summary,
     tags = [],
     children
-  }: { title: string; created: string; image?: string; alt?: string; tags?: string[]; children: Snippet } = $props()
+  }: {
+    title: string
+    created: string
+    image?: string
+    alt?: string
+    cover?: string
+    coverAlt?: string
+    summary?: string
+    tags?: string[]
+    children: Snippet
+  } = $props()
 
   const date = $derived(new Date(created).toISOString().slice(0, 10))
   const url = $derived(`https://andrewnash.github.io${page.url.pathname}`)
@@ -16,17 +28,18 @@
 
 <svelte:head>
   <title>{title} · Andrew Nash</title>
-  <meta name="description" content="{title}. A write-up by Andrew Nash." />
+  <meta name="description" content={summary ?? `${title}. A write-up by Andrew Nash.`} />
   <link rel="canonical" href={url} />
   <meta property="og:type" content="article" />
   <meta property="og:title" content={title} />
   <meta property="og:url" content={url} />
-  {#if image}<meta property="og:image" content="https://andrewnash.github.io{image}" />{/if}
+  {#if summary}<meta property="og:description" content={summary} />{/if}
+  {#if cover ?? image}<meta property="og:image" content="https://andrewnash.github.io{cover ?? image}" />{/if}
 </svelte:head>
 
 <article>
   <header>
-    <a class="back no-print" href="/#writing">← all writing</a>
+    <a class="back no-print" href="/writing/">← all writing</a>
     <p class="meta"><time datetime={date}>{date}</time> · {tags.join(' · ')}</p>
   </header>
   <div class="prose">
