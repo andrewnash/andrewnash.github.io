@@ -1,51 +1,19 @@
-// vite define config
+import { sveltekit } from '@sveltejs/kit/vite'
 import { defineConfig } from 'vite'
-// vite plugin
-import UnoCSS from 'unocss/vite'
-import { presetTagify, presetIcons } from 'unocss'
-import extractorSvelte from '@unocss/extractor-svelte'
-import { imagetools } from 'vite-imagetools'
-import { sveltekit as SvelteKit } from '@sveltejs/kit/vite'
-import { SvelteKitPWA } from '@vite-pwa/sveltekit'
-// postcss & tailwindcss
-import TailwindCSS from 'tailwindcss'
-import tailwindConfig from './tailwind.config'
-import LightningCSS from 'postcss-lightningcss'
+import { execSync } from 'node:child_process'
+
+// Date of the last commit, shown in the footer. Falls back to today outside a git checkout.
+function lastUpdated() {
+  try {
+    return execSync('git log -1 --format=%cs', { encoding: 'utf8' }).trim()
+  } catch {
+    return new Date().toISOString().slice(0, 10)
+  }
+}
 
 export default defineConfig({
-  envPrefix: 'URARA_',
-  build: {
-    sourcemap: false,
-    rollupOptions: {
-      cache: false
-    }
-  },
-  css: {
-    postcss: {
-      plugins: [TailwindCSS(tailwindConfig), LightningCSS()]
-    }
-  },
-  plugins: [
-    UnoCSS({
-      include: [/\.svelte$/, /\.md?$/, /\.ts$/],
-      extractors: [extractorSvelte],
-      presets: [
-        presetTagify({
-          extraProperties: (matched: string) => (matched.startsWith('i-') ? { display: 'inline-block' } : {})
-        }),
-        presetIcons({ scale: 1.5 })
-      ]
-    }),
-    imagetools(),
-    SvelteKit(),
-    SvelteKitPWA({
-      registerType: 'autoUpdate',
-      manifest: false,
-      scope: '/',
-      workbox: {
-        globPatterns: ['posts.json', '**/*.{js,css,html,svg,ico,png,webp,avif}'],
-        globIgnores: ['**/sw*', '**/workbox-*']
-      }
-    })
-  ]
+  plugins: [sveltekit()],
+  define: {
+    __LAST_UPDATED__: JSON.stringify(lastUpdated())
+  }
 })

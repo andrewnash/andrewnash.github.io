@@ -1,124 +1,398 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { fly } from 'svelte/transition'
-  import { page } from '$app/stores'
-  import { browser } from '$app/environment'
-  import { goto } from '$app/navigation'
-  import { posts as storedPosts, tags as storedTags } from '$lib/stores/posts'
-  import { title as storedTitle } from '$lib/stores/title'
-  import Head from '$lib/components/head.svelte'
-  import Footer from '$lib/components/footer.svelte'
-  import Post from '$lib/components/post_card.svelte'
-  import Profile from '$lib/components/index_profile.svelte'
+  import Bullet from '$lib/components/Bullet.svelte'
+  import { posts } from '$lib/posts'
+  import { education, internships, profile, projects, publications, roles, skills, stats, type Skill } from '$lib/resume'
 
-  let allPosts: Urara.Post[]
-  let allTags: string[]
-  let loaded: boolean
-  let [posts, tags, years]: [Urara.Post[], string[], number[]] = [[], [], []]
+  let skill = $state<Skill | null>(null)
+  let expandAll = $state(false)
 
-  storedTitle.set('')
+  const allBullets = roles.flatMap(r => r.bullets)
+  const matches = $derived(skill ? allBullets.filter(b => b.skills.includes(skill!)).length : allBullets.length)
+  const dim = (s: Skill[]) => skill !== null && !s.includes(skill)
 
-  $: storedPosts.subscribe(storedPosts => (allPosts = storedPosts.filter(post => !post.flags?.includes('unlisted'))))
-
-  $: storedTags.subscribe(storedTags => (allTags = storedTags as string[]))
-
-  $: if (posts.length > 1) years = [new Date(posts[0].published ?? posts[0].created).getFullYear()]
-
-  $: if (tags) {
-    posts = !tags ? allPosts : allPosts.filter(post => tags.every(tag => post.tags?.includes(tag)))
-    if (browser && window.location.pathname === '/')
-      goto(tags.length > 0 ? `?tags=${tags.toString()}` : `/`, { replaceState: true })
-  }
-
-  onMount(() => {
-    if (browser) {
-      if ($page.url.searchParams.get('tags')) tags = $page.url.searchParams.get('tags')?.split(',') ?? []
-      loaded = true
-    }
+  const description = `${profile.name}, ${profile.title} at ${profile.company}. ${profile.summary}`
+  const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: profile.name,
+    jobTitle: profile.title,
+    worksFor: { '@type': 'Organization', name: profile.company },
+    url: 'https://andrewnash.github.io/',
+    sameAs: [profile.github, profile.linkedin]
   })
 </script>
 
-<Head />
+<svelte:head>
+  <title>{profile.name} · {profile.title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href="https://andrewnash.github.io/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="{profile.name} · {profile.title}" />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content="https://andrewnash.github.io/" />
+  {@html `<script type="application/ld+json">${jsonLd}</script>`}
+</svelte:head>
 
-<div class="flex flex-col flex-nowrap justify-center xl:flex-row xl:flex-wrap h-feed">
-  <div
-    in:fly={{ x: 25, duration: 300, delay: 500 }}
-    out:fly={{ x: 25, duration: 300 }}
-    class="flex-1 w-full max-w-screen-md order-first mx-auto xl:mr-0 xl:ml-8 xl:max-w-md">
-    <Profile />
+<header class="hero">
+  <h1>{profile.name}</h1>
+  <p class="sub">
+    <b>{profile.title} @ {profile.company}.</b>
+    {profile.summary}
+  </p>
+  <p class="where">{profile.location}</p>
+  <p class="links">
+    <a href={profile.github} target="_blank" rel="noopener">github ↗</a>
+    <a href={profile.linkedin} target="_blank" rel="noopener">linkedin ↗</a>
+    <a href="mailto:{profile.email}">{profile.email}</a>
+    <a class="pdf no-print" href={profile.resume}>resume.pdf ↓</a>
+  </p>
+</header>
+
+<dl class="stats">
+  {#each stats as s}
+    <div>
+      <dt>{s.label}</dt>
+      <dd>{s.value}</dd>
+    </div>
+  {/each}
+</dl>
+
+<section id="experience" aria-labelledby="h-exp">
+  <div class="sec-head">
+    <h2 id="h-exp" class="label">Experience</h2>
+    <button type="button" class="text-btn no-print" onclick={() => (expandAll = !expandAll)} aria-pressed={expandAll}>
+      {expandAll ? 'collapse all' : 'expand all'}
+    </button>
   </div>
-  <div
-    in:fly={{ x: -25, duration: 300, delay: 500 }}
-    out:fly={{ x: -25, duration: 300 }}
-    class="flex-1 w-full max-w-screen-md xl:order-last mx-auto xl:ml-0 xl:mr-8 xl:max-w-md">
-    {#if allTags && Object.keys(allTags).length > 0}
-      <div
-        class="flex xl:flex-wrap gap-2 overflow-x-auto xl:overflow-x-hidden overflow-y-hidden max-h-24 my-auto xl:max-h-fit max-w-fit xl:max-w-full pl-8 md:px-0 xl:pl-8 xl:pt-8">
-        {#each allTags as tag}
-          <button
-            id={tag}
-            on:click={() => (tags.includes(tag) ? (tags = tags.filter(tagName => tagName != tag)) : (tags = [...tags, tag]))}
-            class:!btn-secondary={tags.includes(tag)}
-            class:shadow-lg={tags.includes(tag)}
-            class="btn btn-sm btn-ghost normal-case border-dotted border-base-content/20 border-2 mt-4 mb-8 xl:m-0">
-            #{tag}
-          </button>
-        {/each}
+  <div class="filter no-print" role="group" aria-label="Highlight work by skill">
+    {#each skills as s}
+      <button type="button" aria-pressed={skill === s} onclick={() => (skill = skill === s ? null : s)}>{s}</button>
+    {/each}
+    <span class="count" aria-live="polite">
+      {#if skill}{matches} of {allBullets.length} highlights use {skill}{/if}
+    </span>
+  </div>
+
+  {#each roles as role}
+    <article class="row">
+      <span class="when">{role.start.slice(-4)} – {role.end === 'Present' ? 'now' : role.end.slice(-4)}</span>
+      <div class="body">
+        <h3>{role.company} <span>· {role.title}</span></h3>
+        <ul class="bullets">
+          {#each role.bullets as b}
+            <Bullet bullet={b} open={expandAll} dim={dim(b.skills)} />
+          {/each}
+        </ul>
+        <p class="tags">{role.tags.join(' · ')}</p>
       </div>
-    {/if}
-  </div>
-  <div class="flex-none w-full max-w-screen-md mx-auto xl:mx-0">
-    {#key posts}
-      <!-- {:else} is not used because there is a problem with the transition -->
-      {#if loaded && posts.length === 0}
-        <div
-          in:fly={{ x: 100, duration: 300, delay: 500 }}
-          out:fly={{ x: -100, duration: 300 }}
-          class="bg-base-300 text-base-content shadow-inner text-center md:rounded-box p-10 -mb-2 md:mb-0 relative z-10">
-          <div class="prose items-center">
-            <h2>
-              Not found: [{#each tags as tag, i}
-                '{tag}'{#if i + 1 < tags.length},{/if}
-              {/each}]
-            </h2>
-            <button on:click={() => (tags = [])} class="btn btn-secondary">
-              <span class="i-heroicons-outline-trash mr-2" />
-              tags = []
-            </button>
-          </div>
-        </div>
-      {/if}
-      <main
-        class="flex flex-col relative bg-base-100 md:bg-transparent md:gap-8 z-10"
-        itemprop="mainEntityOfPage"
-        itemscope
-        itemtype="https://schema.org/Blog">
-        {#each posts as post, index}
-          {@const year = new Date(post.published ?? post.created).getFullYear()}
-          {#if !years.includes(year)}
-            <div
-              in:fly={{ x: index % 2 ? 100 : -100, duration: 300, delay: 500 }}
-              out:fly={{ x: index % 2 ? -100 : 100, duration: 300 }}
-              class="divider my-4 md:my-0">
-              {years.push(year) && year}
-            </div>
-          {/if}
-          <div
-            in:fly={{ x: index % 2 ? 100 : -100, duration: 300, delay: 500 }}
-            out:fly={{ x: index % 2 ? -100 : 100, duration: 300 }}
-            class="rounded-box transition-all duration-500 ease-in-out hover:z-30 hover:shadow-lg md:shadow-xl md:hover:shadow-2xl md:hover:-translate-y-0.5">
-            <Post {post} preview={true} loading={index < 5 ? 'eager' : 'lazy'} decoding={index < 5 ? 'auto' : 'async'} />
-          </div>
+    </article>
+  {/each}
+
+  <article class="row" id="internships">
+    <span class="when">2018 – 2021</span>
+    <div class="body">
+      <h3>Co-op internships <span>· ML, data science and NLP</span></h3>
+      <ul class="coops">
+        {#each internships as i}
+          <li>
+            <b>{i.company}</b>
+            <span class="role">{i.role} · {i.dates}</span>
+            <span class="sum">{i.summary}</span>
+          </li>
         {/each}
-      </main>
-      <div
-        class:hidden={!loaded}
-        class="sticky bottom-0 md:static md:mt-8"
-        in:fly={{ x: posts.length + (1 % 2) ? 100 : -100, duration: 300, delay: 500 }}
-        out:fly={{ x: posts.length + (1 % 2) ? -100 : 100, duration: 300 }}>
-        <div class="divider mt-0 mb-8 hidden lg:flex" />
-        <Footer />
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section id="projects" aria-labelledby="h-proj">
+  <h2 id="h-proj" class="label">Projects</h2>
+  {#each projects as p}
+    <article class="row" class:dim={dim(p.skills)}>
+      <span class="when">{p.when}</span>
+      <div class="body">
+        <h3>{p.name} <span>· {p.kicker}</span></h3>
+        <ul class="plain">
+          {#each p.points as pt}<li>{pt}</li>{/each}
+        </ul>
+        <p class="tags">
+          {p.tags.join(' · ')}
+          {#each p.links as l}<a href={l.href}>{l.label} →</a>{/each}
+        </p>
       </div>
-    {/key}
-  </div>
-</div>
+    </article>
+  {/each}
+</section>
+
+<section id="publications" aria-labelledby="h-pub">
+  <h2 id="h-pub" class="label">Publications</h2>
+  {#each publications as p}
+    <article class="row" class:dim={dim(p.skills)}>
+      <span class="when">{p.when}</span>
+      <div class="body">
+        <h3>{p.title} <span>· {p.venue}</span></h3>
+        <p class="muted">{p.summary}</p>
+        <p class="tags">
+          {p.tags.join(' · ')}
+          {#each p.links as l}<a href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined} rel="noopener">{l.label} →</a>{/each}
+        </p>
+      </div>
+    </article>
+  {/each}
+</section>
+
+<section id="education" aria-labelledby="h-edu">
+  <h2 id="h-edu" class="label">Education</h2>
+  {#each education as e}
+    <article class="row">
+      <span class="when">{e.when}</span>
+      <div class="body">
+        <h3>{e.degree}</h3>
+        <p class="muted">{e.school}. {e.note}</p>
+      </div>
+    </article>
+  {/each}
+</section>
+
+<section id="writing" class="no-print" aria-labelledby="h-wri">
+  <h2 id="h-wri" class="label">Writing</h2>
+  {#each posts as p}
+    <a class="row post" href="/{p.slug}/">
+      <span class="when">{p.created}</span>
+      <span class="body"><span class="ptitle">{p.title}</span><span class="tags">{p.tags.slice(0, 3).join(' · ')}</span></span>
+    </a>
+  {/each}
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 10px;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 7vw, 2.9rem);
+    font-weight: 800;
+    font-stretch: 85%;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    color: var(--muted);
+    max-width: 62ch;
+  }
+  .sub b {
+    color: var(--fg);
+    font-weight: 600;
+  }
+  .where {
+    font: 0.8rem var(--mono);
+    color: var(--muted);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font: 500 0.82rem var(--mono);
+    margin-top: 4px;
+  }
+  .links a {
+    text-decoration: none;
+  }
+  .links a:hover {
+    text-decoration: underline;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 0;
+  }
+  .stats div {
+    background: var(--bg);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stats dd {
+    order: -1;
+  }
+  .stats dd {
+    margin: 0;
+    font: 700 1.5rem/1.15 var(--display);
+    font-stretch: 85%;
+    font-variant-numeric: tabular-nums;
+  }
+  .stats dt {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  section {
+    display: grid;
+    gap: 18px;
+  }
+  section > .label,
+  .sec-head {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 7px;
+  }
+  .sec-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .text-btn {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font: 500 0.72rem var(--mono);
+    color: var(--accent);
+  }
+
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: -6px;
+  }
+  .filter button {
+    font: 500 0.74rem var(--mono);
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    border-radius: 99px;
+    padding: 3px 10px;
+    cursor: pointer;
+  }
+  .filter button:hover {
+    color: var(--fg);
+    border-color: var(--muted);
+  }
+  .filter button[aria-pressed='true'] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .count {
+    font: 0.74rem var(--mono);
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 16px;
+    transition: opacity 0.2s;
+  }
+  .row.dim {
+    opacity: 0.28;
+  }
+  .when {
+    font: 0.78rem/2 var(--mono);
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .body {
+    min-width: 0;
+    display: grid;
+    gap: 6px;
+  }
+  h3 {
+    font: 600 1rem/1.5 var(--body);
+  }
+  h3 span {
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .bullets {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2px;
+  }
+  .plain {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+  .muted {
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+  .tags {
+    font: 0.74rem/1.7 var(--mono);
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .tags a {
+    text-decoration: none;
+  }
+  .coops {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  .coops li {
+    display: grid;
+    font-size: 0.94rem;
+  }
+  .coops b {
+    font-weight: 600;
+  }
+  .coops .role {
+    font: 0.74rem var(--mono);
+    color: var(--muted);
+  }
+  .coops .sum {
+    color: var(--muted);
+  }
+
+  .post {
+    text-decoration: none;
+    color: var(--fg);
+  }
+  .post .ptitle {
+    font-weight: 600;
+  }
+  .post:hover .ptitle {
+    color: var(--accent);
+  }
+
+  @media (max-width: 560px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .stats {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media print {
+    .stats div {
+      padding: 6px 10px;
+    }
+    .stats dd {
+      font-size: 1.15rem;
+    }
+    .row.dim {
+      opacity: 1;
+    }
+    .row {
+      grid-template-columns: 90px 1fr;
+    }
+    section {
+      gap: 10px;
+    }
+  }
+</style>

@@ -1,7 +1,3 @@
-import type { LayoutLoad } from './$types'
 export const prerender = true
+// Keeps the existing /igvc/, /hev/ and /srauv/ URLs (and their relative image paths) working.
 export const trailingSlash = 'always'
-export const load: LayoutLoad = async ({ url, fetch }) => ({
-  path: url.pathname,
-  res: await fetch('/posts.json').then(res => res.json())
-})

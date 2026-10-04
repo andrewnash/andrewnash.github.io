@@ -1,40 +1,50 @@
 <script lang="ts">
-  import type { LayoutData } from './$types'
-  import { onMount } from 'svelte'
-  import { browser, dev } from '$app/environment'
-  import { genTags } from '$lib/utils/posts'
-  import { posts, tags } from '$lib/stores/posts'
-  import { registerSW } from 'virtual:pwa-register'
-  import Head from '$lib/components/head_static.svelte'
-  import Header from '$lib/components/header.svelte'
-  import Transition from '$lib/components/transition.svelte'
-  import 'uno.css'
-  import '../app.pcss'
+  import '../app.css'
+  import { onMount, type Snippet } from 'svelte'
+  import Nav from '$lib/components/Nav.svelte'
+  import CommandPalette from '$lib/components/CommandPalette.svelte'
+  import { initTheme } from '$lib/theme.svelte'
+  import { profile } from '$lib/resume'
 
-  export let data: LayoutData
+  let { children }: { children: Snippet } = $props()
 
-  let { res, path } = data
-
-  $: if (data) path = data.path
-
-  posts.set(res)
-  tags.set(genTags(res))
-  onMount(
-    () =>
-      !dev &&
-      browser &&
-      registerSW({
-        immediate: true,
-        onRegistered: r => r && setInterval(async () => await r.update(), 198964),
-        onRegisterError: error => console.error(error)
-      })
-  )
+  onMount(initTheme)
 </script>
 
-<Head />
+<div class="page">
+  <Nav />
+  {@render children()}
+  <footer class="no-print">
+    <span>© {new Date(__LAST_UPDATED__).getFullYear()} {profile.name}</span>
+    <span>updated {__LAST_UPDATED__}</span>
+  </footer>
+</div>
 
-<Header {path} />
+<CommandPalette />
 
-<Transition {path}>
-  <slot />
-</Transition>
+<style>
+  .page {
+    max-width: var(--col);
+    margin: 0 auto;
+    padding-block: 40px 56px;
+    display: grid;
+    gap: 44px;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    font: 0.75rem var(--mono);
+    color: var(--muted);
+  }
+  @media print {
+    .page {
+      max-width: none;
+      padding: 0;
+      gap: 18px;
+    }
+  }
+</style>

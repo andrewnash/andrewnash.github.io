@@ -1,6 +1,5 @@
 # build output
 build
-static
 .svelte-kit
 .netlify
 .vercel
@@ -16,10 +15,3 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
-
-# temp file
-src/routes/**/+page.svelte.md
-src/routes/**/+page.md
-src/static
-*.config.js
-urara.js
