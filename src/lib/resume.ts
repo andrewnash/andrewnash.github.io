@@ -47,9 +47,9 @@ export const profile = {
   name: 'Andrew Nash',
   title: 'Staff ADS Engineer',
   company: 'Aurrigo',
-  focus: ['Perception', 'Localization', 'Planning'],
+  focus: ['Simulation', 'Localization', 'Planning', 'Perception'],
   summary:
-    "I shipped Canada's first medium-speed SAE L4 shuttle, Transport Canada-authorized. Full-stack AV and robotics: machine-learning perception, factor-graph localization, real-time motion planning. Tech lead and code owner of the production stack.",
+    "I'm a self-driving tech lead and the core author of a Transport Canada-authorized SAE Level 4 autonomy stack: simulation, sensor fusion and localization, motion planning, and machine learning perception.",
   location: 'Ottawa, Canada · open to relocation',
   email: 'anash1324@gmail.com',
   github: 'https://github.com/andrewnash',
@@ -58,9 +58,9 @@ export const profile = {
 }
 
 export const stats = [
-  { value: '83.4 mAP', label: 'camera+LiDAR 3D detection @ 20 Hz' },
-  { value: '0.5 → 0.05 m', label: 'lateral error, GTSAM sensor fusion' },
-  { value: '50x', label: 'simulator speedup vs CARLA' }
+  { value: '83.4 mAP', label: 'camera-LiDAR 3D detection @ 20 Hz' },
+  { value: '5 cm', label: 'lateral localization accuracy' },
+  { value: '50x', label: 'airport digital twin vs CARLA' }
 ]
 
 export const roles: Role[] = [
@@ -72,14 +72,8 @@ export const roles: Role[] = [
     location: 'Ottawa, Canada',
     bullets: [
       {
-        head: 'Tech lead of 6 engineers',
-        detail:
-          'Across navigation, perception, localization and planning. Code owner of two $1M+ production deployments.',
-        skills: []
-      },
-      {
-        head: "Built navigation, perception, localization and calibration for Canada's first medium-speed SAE L4 shuttle",
-        detail: 'Transport Canada-authorized.',
+        head: "Led autonomy for Canada's first medium-speed autonomous shuttle",
+        detail: 'Team of 6. Core author and code owner of two $1M+ production deployments.',
         skills: ['ROS', 'C++'],
         link: {
           label: 'press',
@@ -87,28 +81,34 @@ export const roles: Role[] = [
         }
       },
       {
-        head: 'Shipped PyTorch camera+LiDAR 3D detection + tracking at 83.4 mAP @ 20 Hz',
-        detail: 'Paired with a classical safety channel for ISO 26262 diverse redundancy.',
-        skills: ['PyTorch', 'Python', 'CUDA']
-      },
-      {
-        head: 'Built a real-time ROS C++ Frenet motion planner',
-        detail: 'Replaced legacy PID: 400+ parallel trajectories at 50 Hz, jerk-optimal selection against perception.',
-        skills: ['ROS', 'C++']
-      },
-      {
-        head: 'Cut lateral error 10x (0.5 m to 0.05 m), more than doubled top speed (15 to 35 km/h)',
+        head: 'Built an airport digital twin 50x faster than CARLA',
         detail:
-          'Custom GTSAM factors with dynamic GPS/LiDAR/IMU sensor fusion. Unlocked tunnel and GPS-denied terminals.',
+          "Real-time aircraft turnaround with vehicles, people and baggage. Every AV sensor simulated in CUDA, with LiDAR 6x faster than NVIDIA's renderer on the same GPU.",
+        skills: ['Simulation', 'CUDA', 'C++']
+      },
+      {
+        head: 'Authored production localization at 5 cm lateral accuracy',
+        detail: 'Real-time GNSS, LiDAR and IMU sensor fusion, live at 5 sites on 4 vehicle platforms.',
         skills: ['GTSAM', 'C++']
       },
       {
-        head: "Authored Aurrigo's end-to-end Python labelling data pipeline",
-        detail: 'Annotation tool + auto-labeller lifting 2D foundation models to 3D LiDAR.',
-        skills: ['Python', 'PyTorch']
+        head: 'Authored a CUDA LiDAR perception pipeline',
+        detail: 'Occupancy mapping, SLAM and obstacle clustering in real time: 5 ms per scan on 0.1 CPU core.',
+        skills: ['CUDA', 'C++']
+      },
+      {
+        head: 'Shipped camera-LiDAR 3D object detection at 83.4 mAP @ 20 Hz',
+        detail:
+          'Trained in PyTorch, deployed as TensorRT inference on the vehicle with an ISO 26262 redundant safety channel.',
+        skills: ['PyTorch', 'CUDA']
+      },
+      {
+        head: 'Architected the fleet dashboard',
+        detail: 'Real-time WebGPU rendering of HD maps, live sensors, plans and vehicle views at a steady 60 FPS.',
+        skills: []
       }
     ],
-    tags: ['ROS', 'C++', 'PyTorch', 'CUDA', 'TensorRT', 'Git', 'Computer Vision']
+    tags: ['ROS', 'C++', 'Python', 'CUDA', 'PyTorch', 'TensorRT', 'GTSAM', 'Linux']
   },
   {
     company: 'Aurrigo',
@@ -118,23 +118,22 @@ export const roles: Role[] = [
     location: 'Ottawa, Canada',
     bullets: [
       {
-        head: "Led Aurrigo's first AV simulator from scratch",
-        detail: '1000s of scenarios proving airport-customer safety. 50x speedup vs CARLA, faster than real time.',
-        skills: ['Simulation', 'C++']
+        head: 'Solo-authored LiDAR SLAM and mapping for 50+ km/h autonomy',
+        detail: 'C++ GTSAM factor graph built on GLIM, fusing LiDAR, IMU and GPS.',
+        skills: ['GTSAM', 'C++', 'CUDA']
       },
       {
-        head: "Solo-authored Aurrigo's C++ GTSAM iSAM2 SLAM and mapping",
-        detail: 'glim-based GPU factor graph on gtsam_points. GPS-aligned LiDAR maps from all sensors.',
-        skills: ['C++', 'GTSAM', 'CUDA']
+        head: 'Authored real-time C++ motion planning and control',
+        detail: '400+ candidate trajectories at 50 Hz, selecting the smoothest safe path.',
+        skills: ['ROS', 'C++']
       },
       {
-        head: 'Doubled top autonomous speed (25 to 50+ km/h)',
-        detail:
-          '27x CUDA VGICP scan-match speedup, multi-LiDAR at 20 Hz, and custom Ackermann + crab-steer kinematic factors, on the same embedded hardware.',
-        skills: ['CUDA', 'GTSAM', 'C++']
+        head: "Built Aurrigo's first AV simulator in Unreal Engine",
+        detail: '1,000s of safety cases for airport customers.',
+        skills: ['Simulation']
       }
     ],
-    tags: ['ROS', 'C++', 'Python', 'GTSAM', 'UE4', 'CI/CD', 'Linux', 'Bash']
+    tags: ['ROS', 'C++', 'Python', 'GTSAM', 'SLAM', 'Unreal Engine', 'CI/CD']
   }
 ]
 
@@ -182,12 +181,17 @@ export const projects: Project[] = [
     kicker: 'Real-time D&D AI co-pilot',
     when: 'Side project',
     points: [
-      'Streaming audio to LLM agent at ~1 s end-to-end latency: Deepgram STT, Gemini agent loop, 20+ MCP tools.',
-      'Solo-architected: 98 REST routes, hybrid RAG, Svelte 5 PWA, Docker.'
+      'Live voice agent: per-player streaming speech-to-text, an LLM over 53 MCP tools and hybrid RAG.',
+      'Distilled a 66M DistilBERT gate from the LLM that decides when to speak, in 70 ms on CPU.',
+      'Fine-tuned Qwen LoRAs from 1.7B to 27B to frontier-API card quality.'
     ],
-    tags: ['FastAPI', 'LLM', 'RAG', 'MCP', 'GCP'],
-    skills: ['Python'],
-    links: []
+    tags: ['PyTorch', 'LLM', 'LoRA', 'RAG', 'MCP', 'FastAPI'],
+    skills: ['Python', 'PyTorch'],
+    links: [
+      { label: 'realtime voice', href: '/sage-realtime-voice/' },
+      { label: 'distillation', href: '/sage-distilbert-gate/' },
+      { label: 'fine-tuning', href: '/sage-finetune-vs-api/' }
+    ]
   },
   {
     name: 'IGVC',
@@ -211,7 +215,7 @@ export const projects: Project[] = [
     name: 'SpaceX Hyperloop',
     kicker: 'Pod competition',
     when: '2019',
-    points: ['Placed 8th at the 2019 Pod Competition. Built full-stack pod telemetry.'],
+    points: ['Top 2.6% worldwide, 3rd in North America. Built full-stack pod telemetry.'],
     tags: ['C++', 'Flask', 'JS', 'Protobuf', 'CAN'],
     skills: ['C++'],
     links: []
