@@ -77,7 +77,7 @@ export const roles: Role[] = [
         skills: ['ROS', 'C++'],
         link: {
           label: 'press',
-          href: 'https://www.autonomousvehicleinternational.com/news/mobility-solutions/aurrigo-debuts-winter-ready-autonomous-shuttle-in-canada.html'
+          href: 'https://www.ctvnews.ca/ottawa/article/autonomous-shuttle-bus-rolls-out-at-kanata-tech-park'
         }
       },
       {
