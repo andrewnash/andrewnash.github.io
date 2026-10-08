@@ -66,7 +66,7 @@ export const stats = [
 export const roles: Role[] = [
   {
     company: 'Aurrigo',
-    title: 'Staff ADS Engineer',
+    title: 'Staff ADS Engineer – Autonomy Lead',
     start: 'Oct 2025',
     end: 'Present',
     location: 'Ottawa, Canada',
