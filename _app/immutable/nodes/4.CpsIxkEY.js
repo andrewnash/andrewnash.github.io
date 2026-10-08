@@ -1,0 +1,1 @@
+import{n as e}from"../chunks/B-dnB23S.js";export{e as component};
