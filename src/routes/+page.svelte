@@ -18,6 +18,7 @@
     jobTitle: profile.title,
     worksFor: { '@type': 'Organization', name: profile.company },
     url: 'https://andrewnash.github.io/',
+    image: 'https://andrewnash.github.io/headshot.jpg',
     sameAs: [profile.github, profile.linkedin]
   })
 </script>
@@ -30,11 +31,15 @@
   <meta property="og:title" content="{profile.name} · {profile.title}" />
   <meta property="og:description" content={description} />
   <meta property="og:url" content="https://andrewnash.github.io/" />
+  <meta property="og:image" content="https://andrewnash.github.io/headshot.jpg" />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <header class="hero">
-  <h1>{profile.name}</h1>
+  <div class="id">
+    <img class="photo" src="/headshot.jpg" alt="Photo of {profile.name}" width="76" height="76" />
+    <h1>{profile.name}</h1>
+  </div>
   <p class="sub">
     <b>{profile.title} @ {profile.company}.</b>
     {profile.summary}
@@ -171,6 +176,19 @@
   .hero {
     display: grid;
     gap: 10px;
+  }
+  .id {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .photo {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    flex-shrink: 0;
   }
   h1 {
     font-size: clamp(2.2rem, 7vw, 2.9rem);
@@ -380,6 +398,13 @@
     }
     .stats {
       grid-template-columns: 1fr;
+    }
+    .id {
+      gap: 12px;
+    }
+    .photo {
+      width: 56px;
+      height: 56px;
     }
   }
   @media print {
